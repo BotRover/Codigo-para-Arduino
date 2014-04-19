@@ -1,0 +1,41 @@
+
+#include <Servo.h> 
+
+Servo servo1;
+Servo servo2;
+int i;
+void setup() 
+{ 
+  servo1.attach(9);
+  Serial.begin(9600);
+//  servo2.attach(10);
+//  servo1.write(90);  // coloca el servo en su posiciÃ³n central
+//  servo2.write(90);  // coloca el servo en su posiciÃ³n central
+
+} 
+
+void loop() {
+/*for (i=0;i<180;i=i+5)
+  {
+    servo1.write(i);
+    delay(150);
+  }*/
+//i=servo1.read();  
+i = Serial.read();
+//servo1.write(i);
+//Serial.print(i);     
+//Serial.print("\n");
+if(i=='1')
+{
+  servo1.write(90);
+}
+else if(i=='2')
+{
+  servo1.write(135);
+}
+else if(i=='3')
+{
+  servo1.write(45);
+}
+delay(1000);
+} 
